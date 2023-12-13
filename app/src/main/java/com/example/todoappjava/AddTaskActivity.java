@@ -47,13 +47,15 @@ public class AddTaskActivity extends AppCompatActivity {
                 } else {
                     dao.updateTask(new TaskData(taskId, binding.etTitle.getText().toString(), binding.etTask.getText().toString()));
                 }
+
+                finish();
+
             } else if (binding.etTitle.getText().toString().isEmpty()) {
                 binding.etTitle.setError("Title can't be empty!");
             } else {
                 binding.etTask.setError("Task can't be empty!");
             }
 
-            finish();
         });
 
     }
